@@ -29,9 +29,7 @@ export default function PlayerList(props) {
   const renderPlayer = item => {
     const number = item.item.number, name = item.item.name, playing = item.item.playing, index = item.index
 
-    let playingTime = item.item.timePlayed
-    if(playing) playingTime += props.time
-    const timePlayed = getFormattedTime(playingTime), percent = getPercent(playingTime)
+    const timePlayed = getFormattedTime(item.item.timePlayed), percent = getPercent(item.item.timePlayed)
 
     return (
       <TouchableOpacity
