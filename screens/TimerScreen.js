@@ -39,6 +39,12 @@ export default function TimerScreen() {
     if(active) {
       interval = setInterval(() => {
         setTime(time + 1);
+        setRoster(roster.map((player) => {
+          if (player.playing) {
+            player.timePlayed = player.timePlayed + 1;
+          }
+          return player;
+        }));
       }, 1000);
     }
     else if(!active && time !== 0) {
