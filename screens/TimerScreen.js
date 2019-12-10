@@ -31,6 +31,30 @@ export default function TimerScreen() {
       timePlayed: 0,
       playing: true,
     },
+    {
+      number: '42',
+      name: 'Landon Hall',
+      timePlayed: 0,
+      playing: true,
+    },
+    {
+      number: '43',
+      name: 'Evan Soubra',
+      timePlayed: 0,
+      playing: true,
+    },
+    {
+      number: '44',
+      name: 'Evan Friedrich',
+      timePlayed: 0,
+      playing: true,
+    },
+    {
+      number: '51',
+      name: 'Azmir Humes',
+      timePlayed: 0,
+      playing: true,
+    },
   ])
 
   useEffect(() => {
@@ -70,6 +94,10 @@ export default function TimerScreen() {
 
   const reset = () => {
     setTime(0)
+    setRoster(roster.map((player) =>{
+      player.timePlayed = 0;
+      return player;
+    }))
     setActive(false)
   }
 

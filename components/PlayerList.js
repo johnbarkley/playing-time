@@ -9,6 +9,13 @@ import {
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function PlayerList(props) {
+  props.roster.sort((a, b) => {
+    // negative for a before b
+    if (a.playing && !b.playing) return -1;
+    else if (!a.playing && b.playing) return 1;
+    else return a.number - b.number;
+  })
+
   const getFormattedTime = (sec) => {
     sec %= 3600;
     minutes = Math.floor(sec / 60);
